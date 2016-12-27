@@ -1,3 +1,4 @@
+/*å¶å§œè±ª 14ä¿¡æ¯ä¸è®¡ç®—ç§‘å­¦ è¯¾ç¨‹ç»ƒä¹ é¢˜ ä¿®æ”¹æ—¥æœŸ2016/12/27*/
 #include<iostream>
 #include<string>
 #include<stdio.h>
@@ -6,7 +7,7 @@
 #define XX "------------------"
 #define XH "*********"
 
-class Date{				//Ê±¼äÀàº¯Êı
+class Date{				//æ—¶é—´ç±»å‡½æ•°
 public:
 	Date(int Year = 0,int Month = 0, int Day = 0): Year(Year),Month(Month),Day(Day){}
 	Date (Date &P){
@@ -21,7 +22,7 @@ public:
 		Day = q.Day;
 	}
 	void ShowDate(){
-	cout  << Year << "Äê" << Month << "ÔÂ" << Day << "ÈÕ"  << endl;
+	cout  << Year << "å¹´" << Month << "æœˆ" << Day << "æ—¥"  << endl;
 	}
 private:
 	int Year,Month,Day;
@@ -34,7 +35,7 @@ void Date::GetDate(){
 	this->Month = y;
 	this->Day = z;
 }
-class People{  //PeopleÀàº¯Êı
+class People{  //Peopleç±»å‡½æ•°
 	public:
 		People(){
 		number = ++count;
@@ -54,18 +55,18 @@ class People{  //PeopleÀàº¯Êı
 		int GetAge(){return age;}
 		int GetOde(){return Odest;}
 		float GetAverage(){return Average;}
-		string GetName(){return name;}		//¶ÁÈ¡ĞÕÃû½Ó¿Ú 
-		void NameIs(){			//³õÊ¼»¯ĞÕÃû½Ó¿Ú 
-			cout << "ĞÕÃû: ";
+		string GetName(){return name;}		//è¯»å–å§“åæ¥å£ 
+		void NameIs(){			//åˆå§‹åŒ–å§“åæ¥å£ 
+			cout << "å§“å: ";
 			cin >> name;
 		}
 		void inline ShowInfo(){
-			cout <<  XX << "±àºÅ" << number  << XX<<endl;
-			cout << "ĞÕÃû: " << name << endl;
-			cout << "ĞÔ±ğ: " << sex << endl;
-            cout << "³öÉúÈÕÆÚ: " ;
+			cout <<  XX << "ç¼–å·" << number  << XX<<endl;
+			cout << "å§“å: " << name << endl;
+			cout << "æ€§åˆ«: " << sex << endl;
+            cout << "å‡ºç”Ÿæ—¥æœŸ: " ;
 			birthday.ShowDate();
-			cout <<  "ÄêÁä: " << age << endl;
+			cout <<  "å¹´é¾„: " << age << endl;
 			cout <<  XX << XX << XX<<endl;
 		}
 		private:
@@ -82,21 +83,21 @@ float People::Average = 0;
 
 
 void People::GetInfo(){
-	cout <<  XX << "±àºÅ" << number  << XX<<endl;
-	cout << "ĞÕÃû: ";
+	cout <<  XX << "ç¼–å·" << number  << XX<<endl;
+	cout << "å§“å: ";
 	cin >> name;
-	cout << "ĞÔ±ğ: ";
+	cout << "æ€§åˆ«: ";
 	cin >> sex;
-	cout << "³öÉúÈÕÆÚ: "<< endl;
+	cout << "å‡ºç”Ÿæ—¥æœŸ: "<< endl;
 	birthday.GetDate();
-	cout << "ÄêÁä: ";
+	cout << "å¹´é¾„: ";
 	cin >> age;
 	if(age >= Odest) Odest = age;
 	count++;
 	Average  = ((count - 1) * Average + age ) / count;
 }
 
-class Score   //³É¼¨
+class Score   //æˆç»©
 {
 public:
 	void GetScore();
@@ -106,16 +107,16 @@ private:
 };
 void Score::GetScore()
 {
-	cout << "CÓïÑÔ³É¼¨: ";
+	cout << "Cè¯­è¨€æˆç»©: ";
 	cin >> c_grade;
-	cout << "ÊıÑ§³É¼¨: ";
+	cout << "æ•°å­¦æˆç»©: ";
 	cin >> math_grade;
-	cout << "Ó¢Óï³É¼¨: ";
+	cout << "è‹±è¯­æˆç»©: ";
 	cin >> english_grade;
 }
 void Score::ShowScore()
 {
-	cout <<"CÓïÑÔ³É¼¨: " << c_grade << "  ÊıÑ§³É¼¨: " << math_grade << "   Ó¢Óï³É¼¨: " << english_grade << endl;
+	cout <<"Cè¯­è¨€æˆç»©: " << c_grade << "  æ•°å­¦æˆç»©: " << math_grade << "   è‹±è¯­æˆç»©: " << english_grade << endl;
 	
 }
 
@@ -131,26 +132,26 @@ private:
 };
 
 
-void Student::GetStudInfo(){ //Ñ§ÉúÀà
+void Student::GetStudInfo(){ //å­¦ç”Ÿç±»
 	NameIs(); 
-	cout << "Ñ§ºÅ: ";
+	cout << "å­¦å·: ";
 	cin >> ID;
-	cout << "Äê¼¶: ";
+	cout << "å¹´çº§: ";
 	cin >> r;
-	cout << "×¨Òµ: " ;
+	cout << "ä¸“ä¸š: " ;
 	cin >> c;
 	MyScore.GetScore();
 }
 void Student::ShowStudInfo(){
 	cout <<  XX << XX << XX<<endl;
-	cout << "ĞÕÃû: " << GetName() << "  " << "Ñ§ºÅ: " << ID <<endl;
-	cout << "Äê¼¶ " << r << endl;
-	cout << "×¨Òµ " << c << endl;
+	cout << "å§“å: " << GetName() << "  " << "å­¦å·: " << ID <<endl;
+	cout << "å¹´çº§ " << r << endl;
+	cout << "ä¸“ä¸š " << c << endl;
 	MyScore.ShowScore();
 	cout <<  XX << XX << XX<<endl;
 
 }
-class Teacher :virtual  public People{ //½ÌÊ¦Àà
+class Teacher :virtual  public People{ //æ•™å¸ˆç±»
 public:
 	void GetTeachInfo();
 	void ShowTeachInfo();
@@ -159,21 +160,21 @@ private:
 };
 void Teacher::GetTeachInfo(){
 	NameIs();
-	cout << "¹¤ºÅ : ";
+	cout << "å·¥å· : ";
 	cin >> ID;
-	cout << "Ö°Îñ : ";
+	cout << "èŒåŠ¡ : ";
 	cin >> ZW;
-	cout << "²¿ÃÅ : " ;
+	cout << "éƒ¨é—¨ : " ;
 	cin >> BM;
-	cout << "Ö°³Æ : " ;
+	cout << "èŒç§° : " ;
 	cin >> ZC;
 }
 void Teacher::ShowTeachInfo(){
 	cout <<  XX << XX << XX<<endl;
-	cout << "ĞÕÃû: " << GetName() << "  " << "¹¤ºÅ: " << ID <<endl; 
-	cout << "Ö°Îñ: " << ZW << KG ;
-	cout << "²¿ÃÅ: " << BM << KG ;
-	cout << "Ö°³Æ: " << ZC << endl;
+	cout << "å§“å: " << GetName() << "  " << "å·¥å·: " << ID <<endl; 
+	cout << "èŒåŠ¡: " << ZW << KG ;
+	cout << "éƒ¨é—¨: " << BM << KG ;
+	cout << "èŒç§°: " << ZC << endl;
 	cout <<  XX << XX << XX<<endl;
 }
 
@@ -190,18 +191,18 @@ private:
 
 void Course::GetCourseInfo()
 {
-	cout << "¿Î³ÌÃû³Æ: "; 
+	cout << "è¯¾ç¨‹åç§°: "; 
 	cin >> CourseName;
-	cout << "¿Î³ÌÀÏÊ¦: ";
+	cout << "è¯¾ç¨‹è€å¸ˆ: ";
 	course_teacher.GetTeachInfo();
-	cout << "¿Î³ÌÈËÊı: ";
+	cout << "è¯¾ç¨‹äººæ•°: ";
 	cin >> stuNumber;
 }
 void Course::ShowCourseInfo()
 {
 	cout <<  XX << XX << XX<<endl;
-	cout << "¿Î³ÌÀÏÊ¦: " << course_teacher.GetName() << endl;
-	cout << "¿Î³ÌÈËÊı: " << stuNumber << endl;
+	cout << "è¯¾ç¨‹è€å¸ˆ: " << course_teacher.GetName() << endl;
+	cout << "è¯¾ç¨‹äººæ•°: " << stuNumber << endl;
 }
 
 typedef struct node 
@@ -213,24 +214,24 @@ typedef struct node
 void menu()
 {
 	system("color 80");
-	cout <<"\n" << XH << "²éÑ¯£¨1£©" << XH << endl;
-	cout << XH << "ÔöÌí£¨2£©" << XH << endl;
-	cout << XH << "É¾³ı£¨3£©" << XH << endl;
-	cout << XH << "ÏÔÊ¾£¨4£©" << XH << endl;
-	cout << XH << "ÍË³ö£¨5£©" << XH << endl;
+	cout <<"\n" << XH << "æŸ¥è¯¢ï¼ˆ1ï¼‰" << XH << endl;
+	cout << XH << "å¢æ·»ï¼ˆ2ï¼‰" << XH << endl;
+	cout << XH << "åˆ é™¤ï¼ˆ3ï¼‰" << XH << endl;
+	cout << XH << "æ˜¾ç¤ºï¼ˆ4ï¼‰" << XH << endl;
+	cout << XH << "é€€å‡ºï¼ˆ5ï¼‰" << XH << endl;
 }
 void Search(Link l)
 {
 	system("cls") ;
-	cout << XX << "ÔªËØ²éÑ¯" << XX << endl; 
+	cout << XX << "å…ƒç´ æŸ¥è¯¢" << XX << endl; 
 	string Name;
-	cout << "ÊäÈëĞÕÃû: ";
+	cout << "è¾“å…¥å§“å: ";
 	cin >> Name;
 	Node *r;
 	r = l -> next;
 	if(r == NULL) 
 	{
-		cout << "Ñ§Éú±íÎª¿Õ£¡£¡ ÇëÌí¼ÓÔªËØ£¡£¡£¡";
+		cout << "å­¦ç”Ÿè¡¨ä¸ºç©ºï¼ï¼ è¯·æ·»åŠ å…ƒç´ ï¼ï¼ï¼";
 		return; 
 	}
 	else
@@ -243,14 +244,14 @@ void Search(Link l)
 			r = r->next;
 		}
 	}
-	cout << "²éµ½²»µ½ÏàÓ¦ĞÅÏ¢£¡£¡£¡" << endl;
+	cout << "æŸ¥åˆ°ä¸åˆ°ç›¸åº”ä¿¡æ¯ï¼ï¼ï¼" << endl;
 }
 void Add(Link l)
 {
 	system("cls") ;
 	static int counter = 0; 
-	counter++;		//¼ÆÊıÆ÷ 
-	cout << XX << "Ôö¼ÓÔªËØ" << XX << endl; 
+	counter++;		//è®¡æ•°å™¨ 
+	cout << XX << "å¢åŠ å…ƒç´ " << XX << endl; 
 	Node *r;
 	r = l;
 	while(r->next != NULL) r = r->next;
@@ -262,10 +263,10 @@ void Add(Link l)
 void Del(Link l)
 {
 	system("cls") ;
-	cout << XX << "É¾³ıÔªËØ" << XX << endl; 
+	cout << XX << "åˆ é™¤å…ƒç´ " << XX << endl; 
 	string na;
-	Node *r  = l->next;
-	cout << "ÒªÉ¾³ıÑ§ÉúµÄÑ§ºÅ: ";
+	Node *r  = l;
+	cout << "è¦åˆ é™¤å­¦ç”Ÿçš„å­¦å·: ";
 	while(r != NULL)
 	{
 		if( ((r ->next)->stu).GetID() == na)
@@ -277,15 +278,15 @@ void Del(Link l)
 		else r = r->next;
 		
 	}
-	cout << "²»´æÔÚ´ËÑ§Éú£¡£¡£¡" << endl;
+	cout << "ä¸å­˜åœ¨æ­¤å­¦ç”Ÿï¼ï¼ï¼" << endl;
 }
 void Disp(Link l)
 {
-	cout << XX << "ÏÔÊ¾ÏµÍ³" << XX << endl; 
+	cout << XX << "æ˜¾ç¤ºç³»ç»Ÿ" << XX << endl; 
 	system("cls") ;
 	Node *r = l->next;
 	if(r == NULL) {
-		cout << "¿Õ±í£¡£¡£¡" << endl;
+		cout << "ç©ºè¡¨ï¼ï¼ï¼" << endl;
 		return;
 	}
 	while(r != NULL)	
@@ -296,51 +297,12 @@ void Disp(Link l)
 }
 int main()
 {
-	/*
-	Link l;		//¶¨ÒåÁ´±í
-	FILE *fp;  //ÎÄ¼şÖ¸Õë
-	int select;		//±£´æ½á¹û±äÁ¿
-	char ch ;  //(y,Y,N,n) Ñ¡ÔñÅĞ¶Ï
-	int counter = 0; //½áµã¸öÊı 
-	Node *p,*r;
-	l = new Node;
-	if(!l) 
-	{
-		cout << "\n ÉêÇë¿Õ¼äÊ§°Ü "  << endl; 	//	ÉêÇë¿Õ¼äÊ§°Ü
-		return 0; 
-	}
-	l->next = NULL;
-	r = l;
-	fp = fopen("E:\\student.txt","ab+");//´´½¨ÎÄ¼ş 
-	if(fp == NULL) 
-	{
-		cout << "\n ÎŞ·¨ÕÒµ½ÎÄ¼ş£¡" << endl;
-		exit(0);
-	}
-	while(!feof(fp))
-	{
-		p = new Node;
-		if(!p)
-		{
-			cout << "\n ÉêÇë¿Õ¼äÊ§°Ü \n";
-			exit(0);
-		}
-		if(fread(p,sizeof(Node),1,fp) == 1)		//Ò»´Î´ÓÎÄ¼şÖĞ¶ÁÈ¡Ò»Ìõ¼ÇÂ¼
-		{
-			p -> next = NULL;	//	Ö¸ÕëºóÒÆ 
-			r -> next  = p;
-			r = p;
-			counter++;
-		} 
-	}
-	fclose(fp);			//¹Ø±ÕÎÄ¼ş 
-	*/
 	Node *head,*p,*q;
 	head = new Node;
 	head->next = NULL;
 	menu();
 	int i;
-	cout << "ÊäÈëÒª½øĞĞµÄ²Ù×÷£¨1~4£©: " ;
+	cout << "è¾“å…¥è¦è¿›è¡Œçš„æ“ä½œï¼ˆ1~4ï¼‰: " ;
 	cin >> i;
 	while(i != 5)
 	{
@@ -350,10 +312,10 @@ int main()
 			case 2:Add(head);break;
 			case 3:Del(head);break;
 			case 4:Disp(head) ;break;
-			default:cout << "ÍË³ö" << endl; break; 
+			default:cout << "é€€å‡º" << endl; break; 
 		}
 		menu();
-		cout << "\n ÊäÈëÒª½øĞĞµÄ²Ù×÷£¨1~4£©: " ;
+		cout << "\n è¾“å…¥è¦è¿›è¡Œçš„æ“ä½œï¼ˆ1~4ï¼‰: " ;
 		cin >> i;
 	}
 	return 0;
