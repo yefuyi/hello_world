@@ -1,4 +1,4 @@
 # hello_world
-My first repository
-用于shell编程学习
+我的第一个仓库
+用于shell/c/c++编程学习
 
