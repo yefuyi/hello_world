@@ -1,5 +1,6 @@
 #include<iostream>
-	using namespace std;
+//c++函数模板使用示例
+using namespace std;
 template <class T>
 T abs(T x)
 {
@@ -11,9 +12,9 @@ int main()
 	int i = -8;
 	float j = -6;
 	double p = -89.345;
-	cout << i << "�ľ���ֵ="  << abs(i) << endl;
-	cout << j << "�ľ���ֵ=" << abs(j) << endl;
-	cout << p << "�ľ���ֵ="  << abs(p) << endl;
+	cout << i << "的绝对值="  << abs(i) << endl;
+	cout << j << "的绝对值=" << abs(j) << endl;
+	cout << p << "的绝对值="  << abs(p) << endl;
 	
 	return 0;
 }
