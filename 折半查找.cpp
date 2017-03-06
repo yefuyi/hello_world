@@ -1,7 +1,8 @@
 #include<iostream>
 	using namespace std;
+//é’ˆå¯¹æŸ¥æ‰¾è¡¨å¿…é¡»æ˜¯éé™åºçš„æ•°ç»„
 template <class T>	
-int Search(const T list[],int n,const T &key)  //ÕÛ°ë²éÕÒ 
+int Search(const T list[],int n,const T &key)  //æŠ˜åŠæŸ¥æ‰¾ 
 {
 	int low = 0;
 	int high = n - 1;
@@ -15,19 +16,19 @@ int Search(const T list[],int n,const T &key)  //ÕÛ°ë²éÕÒ
 		else 
 			low = mid + 1;
 	}
-	return -1;   //Èç¹ûÃ»ÓĞÕÒµ½Ôò·µ»Ø-1 
+	return -1;   //å¦‚æœæ²¡æœ‰æ‰¾åˆ°åˆ™è¿”å›-1 
 }
 
-int main()   //ÕÛ°ë²éÕÒÀïÃæµÄÊı×éÔªËØĞèÒª³ÊÉıĞò»ò½µĞò£¬´Ë´¦ÎªÉıĞò; 
+int main()   //æŠ˜åŠæŸ¥æ‰¾é‡Œé¢çš„æ•°ç»„å…ƒç´ éœ€è¦å‘ˆå‡åºæˆ–é™åºï¼Œæ­¤å¤„ä¸ºå‡åº; 
 {
 	int n,a[10]={1,2,3,4,5,6,7,8,9,10};
-	cout << "Êı×éÔªËØÎª£º" << endl;
+	cout << "æ•°ç»„å…ƒç´ ä¸ºï¼š" << endl;
 	for(int i = 0;i < 10 ;i ++)
 	cout << a[i] << " ";
 	cout << endl;
-	cout << "ÇëÊäÈëĞèÒª²éÕÒµÄÔªËØ n = ";
+	cout << "è¯·è¾“å…¥éœ€è¦æŸ¥æ‰¾çš„å…ƒç´  n = ";
 	cin >> n;
-	cout << n <<"ÔÚÊı×éÖĞµÄÎ»ÖÃµÚ"  << Search(a,10,n) + 1 << "¸öÔªËØ" << endl;
+	cout << n <<"åœ¨æ•°ç»„ä¸­çš„ä½ç½®ç¬¬"  << Search(a,10,n) + 1 << "ä¸ªå…ƒç´ " << endl;
 	
 	return 0;
 }
