@@ -14,10 +14,10 @@ int Fabo(int k, int m)
 int main()
 {
 	int k,m,sum;
-	printf("输入斐波那契数列的阶数和项数: ");
+	printf("杈撳叆鏂愭尝閭ｅ鏁板垪鐨勯樁鏁板拰椤规暟: ");
 	scanf("%d%d",&k,&m);
 	sum = Fabo(k,m);
-	printf("%d阶斐波那契数列第%d项的值为%d",k,m,sum);
+	printf("%d闃舵枑娉㈤偅濂戞暟鍒楃%d椤圭殑鍊间负%d",k,m,sum);
 	return 0;
 	
 	
