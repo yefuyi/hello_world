@@ -1,4 +1,5 @@
 #include<stdio.h>
+//k 阶 m项斐波那契数列
 int Fabo(int k, int m)
 {
 	int i,sum;
