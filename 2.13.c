@@ -1,16 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
-/* ´úÂë¹¦ÄÜ:
-1¡¢Î²²å·¨½¨Á¢µ¥Á´±í
-2¡¢´òÓ¡µ¥Á´±í
-3¡¢²éÕÒÔªËØÎ»ÖÃ 
+/* ä»£ç åŠŸèƒ½:
+1ã€å°¾æ’æ³•å»ºç«‹å•é“¾è¡¨
+2ã€æ‰“å°å•é“¾è¡¨
+3ã€æŸ¥æ‰¾å…ƒç´ ä½ç½® 
 */
 
 #define MAX 100
 #define FLASE 0
 #define TRUE 1
 
-typedef struct LNode{	//½áµãµÄ¶¨Òå
+typedef struct LNode{	//ç»“ç‚¹çš„å®šä¹‰
 	int data;
 	struct LNode *next;
 }Ll,LNode;
@@ -59,11 +59,11 @@ int main()
 	p = CreateLinklist(p,5);
 	PrintLinklist(p);
 	int e;
-	printf("ÊäÈëÒª²éÕÒµÄÔªËØ e = ") ;
+	printf("è¾“å…¥è¦æŸ¥æ‰¾çš„å…ƒç´  e = ") ;
 	scanf("%d",&e);
 	int i = Locate(p,e);
-	if(i == 0) printf("²»´æÔÚ¸ÃÔªËØ!!\n") ;
-	else printf("¸ÃÔªËØµÄÎ»ÖÃÔÚÏßĞÔ±íµÚ%d¸ö¡£\n",i);
+	if(i == 0) printf("ä¸å­˜åœ¨è¯¥å…ƒç´ !!\n") ;
+	else printf("è¯¥å…ƒç´ çš„ä½ç½®åœ¨çº¿æ€§è¡¨ç¬¬%dä¸ªã€‚\n",i);
 	return 0;
 	
 
